@@ -6,7 +6,7 @@ export default function App() {
       <SignedOut>
         <div className="text-center space-y-8 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">
-            Welcome to SparkApp! ✨
+            Welcome to ClerkApp! ✨
           </h1>
           <div className="group relative inline-block">
             <SignInButton mode="modal">
