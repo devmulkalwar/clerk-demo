@@ -1,9 +1,16 @@
-import express from "express"
-import { getUserSavedPosts, savePost } from "../controllers/user.controller.js"
+import express from "express";
+import { insertAdditionalData, getAllUsers, getUsersById } from "../controllers/user.controllers.js";
+import { requireAuth } from "@clerk/express";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get("/saved", getUserSavedPosts)
-router.patch("/save", savePost)
+// Get all users
+router.get("/", getAllUsers);
 
-export default router 
+// Get a user by Clerk ID
+router.get("/:id", requireAuth(), getUsersById);
+
+// Update additional user data
+router.put("/:id", requireAuth(), insertAdditionalData);
+
+export default router;
